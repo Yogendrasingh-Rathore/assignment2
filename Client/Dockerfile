@@ -8,6 +8,8 @@ RUN mkdir /root/.ssh
 COPY ./id_rsa /root/.ssh
 COPY ./authorized_keys /root/.ssh
 
+RUN chmod 600 /root/.ssh/id_rsa
+
 RUN mkdir /clientdata
 COPY ./FileClient.sh /clientdata
 WORKDIR /clientdata
